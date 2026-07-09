@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.hiwepy</groupId>
 	<artifactId>metrics-ehcache3</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>3.0.x.20260630-SNAPSHOT</version>
 	
 	<name>Metrics Ehcache 3.x Integration</name>
 	<description>Metrics + Ehcache 3.x for Ehcache monitoring</description>
