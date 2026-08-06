@@ -56,7 +56,8 @@
 					<version>3.6.1</version> 
 					  
 					<configuration>
-						<defaultLibBundleDir>lib</defaultLibBundleDir>
+						<forceCreation>true</forceCreation>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
 						
 						<source>17</source>
 						
@@ -71,7 +72,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.0.1</version>
+					<version>3.4.0</version>
 					  
 					<configuration>
 						
@@ -137,10 +138,10 @@
 				<plugin>  					 
 					<groupId>org.apache.maven.plugins</groupId>  
 					<artifactId>maven-jar-plugin</artifactId>  
-					<version>3.0.2</version>  
+					<version>3.5.0</version>  
 					<configuration> 
 						<encoding>${project.build.sourceEncoding}</encoding>
-						<skipIfEmpty>true</skipIfEmpty> 
+						 
 	                    <archive>  
                     	 	<manifest>
 								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
@@ -155,19 +156,19 @@
 				<plugin>  					 
 					<groupId>org.apache.maven.plugins</groupId>  
 					<artifactId>maven-install-plugin</artifactId>  
-					<version>2.5.2</version>  
+					<version>3.1.4</version>  
 				</plugin> 
 				 
 				<plugin>  
 		            <groupId>org.apache.maven.plugins</groupId>  
 		            <artifactId>maven-deploy-plugin</artifactId>  
-		            <version>2.8.2</version>  
+		            <version>3.1.4</version>  
 		        </plugin>
 								
 				<plugin>
 					 <groupId>org.apache.maven.plugins</groupId>
 					 <artifactId>maven-source-plugin</artifactId>
-					 <version>3.0.1</version> 
+					 <version>3.4.0</version> 
 					 
 					 <configuration>  
 					 	 <testFailureIgnore>true</testFailureIgnore>
