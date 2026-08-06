@@ -2,6 +2,8 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
+[![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/metrics-ehcache3) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
+
 > **项目状态**：`feature/2.0.x` 版本线（JDK 17）上的脚手架模块。pom、许可证与构建管线已就位，但本分支尚无任何源码与测试。制品尚未发布到 Maven Central。
 
 ## 目录
