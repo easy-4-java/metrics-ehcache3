@@ -4,7 +4,9 @@
 
 [![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/metrics-ehcache3) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
 
-> **项目状态**：`feature/2.0.x` 版本线（JDK 17）上的脚手架模块。pom、许可证与构建管线已就位，但本分支尚无任何源码与测试。制品尚未发布到 Maven Central。
+metrics-ehcache3 是规划中的 Dropwizard Metrics 与 Ehcache 3.x 集成组件（项目定位：Metrics + Ehcache 3.x for Ehcache monitoring）。
+
+> **项目状态**：`feature/2.0.x` 版本线（JDK 8）上的脚手架模块。pom、许可证与构建管线已就位，但本分支尚无任何源码与测试。制品尚未发布到 Maven Central。
 
 ## 目录
 
