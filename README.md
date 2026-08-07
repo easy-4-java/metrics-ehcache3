@@ -4,6 +4,8 @@
 
 [![Java](https://img.shields.io/badge/Java-8-orange)](https://github.com/easy-4-java/metrics-ehcache3) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
 
+metrics-ehcache3 is the planned Dropwizard Metrics integration for Ehcache 3.x (project description: "Metrics + Ehcache 3.x for Ehcache monitoring").
+
 > **Status**: scaffold module on the `feature/1.0.x` line (JDK 8). The pom, license and build plumbing are in place; no source code or tests exist in this branch yet. Artifacts are not yet published to Maven Central.
 
 ## Table of Contents
