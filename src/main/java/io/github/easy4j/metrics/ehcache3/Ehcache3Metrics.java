@@ -1,10 +1,8 @@
 package io.github.easy4j.metrics.ehcache3;
 
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 
 import org.ehcache.Cache;
-import org.ehcache.core.statistics.CacheStatistics;
 
 import com.codahale.metrics.Gauge;
 import com.codahale.metrics.MetricRegistry;
@@ -46,97 +44,32 @@ public class Ehcache3Metrics {
         String metricName = prefix + "ehcache." + cacheName;
 
         registry.register(metricName + ".hit-count", (Gauge<Long>) () -> {
-            try {
-                return getHitCount(cache);
-            } catch (Exception e) {
-                return 0L;
-            }
+            try { return getHitCount(cache); } catch (Exception e) { return 0L; }
         });
-
         registry.register(metricName + ".miss-count", (Gauge<Long>) () -> {
-            try {
-                return getMissCount(cache);
-            } catch (Exception e) {
-                return 0L;
-            }
+            try { return getMissCount(cache); } catch (Exception e) { return 0L; }
         });
-
         registry.register(metricName + ".hit-rate", new RatioGauge() {
-            @Override
-            protected Ratio getRatio() {
+            @Override protected Ratio getRatio() {
                 try {
-                    long hits = getHitCount(cache);
-                    long misses = getMissCount(cache);
-                    long total = hits + misses;
-                    return Ratio.of(hits, total);
-                } catch (Exception e) {
-                    return Ratio.of(0, 0);
-                }
+                    long hits = getHitCount(cache), misses = getMissCount(cache);
+                    return Ratio.of(hits, hits + misses);
+                } catch (Exception e) { return Ratio.of(0, 0); }
             }
         });
-
         registry.register(metricName + ".eviction-count", (Gauge<Long>) () -> {
-            try {
-                return getEvictionCount(cache);
-            } catch (Exception e) {
-                return 0L;
-            }
+            try { return getEvictionCount(cache); } catch (Exception e) { return 0L; }
         });
-
         registry.register(metricName + ".size", (Gauge<Long>) () -> {
-            try {
-                return getCacheSize(cache);
-            } catch (Exception e) {
-                return 0L;
-            }
+            try { return getCacheSize(cache); } catch (Exception e) { return 0L; }
         });
     }
 
-    /**
-     * Gets the hit count for a cache.
-     *
-     * @param cache the cache
-     * @return the hit count
-     */
-    protected <K, V> long getHitCount(Cache<K, V> cache) {
-        return 0L;
-    }
+    protected <K, V> long getHitCount(Cache<K, V> cache) { return 0L; }
+    protected <K, V> long getMissCount(Cache<K, V> cache) { return 0L; }
+    protected <K, V> long getEvictionCount(Cache<K, V> cache) { return 0L; }
+    protected <K, V> long getCacheSize(Cache<K, V> cache) { return 0L; }
 
-    /**
-     * Gets the miss count for a cache.
-     *
-     * @param cache the cache
-     * @return the miss count
-     */
-    protected <K, V> long getMissCount(Cache<K, V> cache) {
-        return 0L;
-    }
-
-    /**
-     * Gets the eviction count for a cache.
-     *
-     * @param cache the cache
-     * @return the eviction count
-     */
-    protected <K, V> long getEvictionCount(Cache<K, V> cache) {
-        return 0L;
-    }
-
-    /**
-     * Gets the size of a cache.
-     *
-     * @param cache the cache
-     * @return the cache size
-     */
-    protected <K, V> long getCacheSize(Cache<K, V> cache) {
-        return 0L;
-    }
-
-    /**
-     * Removes all registered metrics for the given cache.
-     *
-     * @param cacheName the cache name
-     */
     public void removeCache(String cacheName) {
         Objects.requireNonNull(cacheName, "Cache name must not be null");
         String metricName = prefix + "ehcache." + cacheName;
@@ -147,21 +80,6 @@ public class Ehcache3Metrics {
         registry.remove(metricName + ".size");
     }
 
-    /**
-     * Returns the MetricRegistry used by this instance.
-     *
-     * @return the MetricRegistry
-     */
-    public MetricRegistry getRegistry() {
-        return registry;
-    }
-
-    /**
-     * Returns the metric prefix.
-     *
-     * @return the prefix
-     */
-    public String getPrefix() {
-        return prefix;
-    }
+    public MetricRegistry getRegistry() { return registry; }
+    public String getPrefix() { return prefix; }
 }
